@@ -22,6 +22,7 @@ namespace CadastroAlunos_Console.Views
                 Console.WriteLine("2 - Listar Alunos");
                 Console.WriteLine("3 - Atualizar Alunos");
                 Console.WriteLine("4 - Excluir Alunos");
+                Console.WriteLine("5 - Sair");
                 Console.WriteLine("Opção: ");
                 opcao = int.Parse(Console.ReadLine());
 
