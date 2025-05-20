@@ -18,14 +18,27 @@ namespace CadastroAlunos_Console.Controller
             alunos.Add (novoAluno);
         }
 
-        public void ListarAlunos() 
-        { 
-        }
-        public void AtualizarAlunos()
+        public List<Aluno> ListarAlunos()
         {
+            return alunos;
         }
-        public void ExcluirAlunos()
+
+        public bool AtualizarAluno(int id, string nome, string cpf, string curso, DateTime dataNascimento)
         {
+            Aluno aluno = alunos.Find(a => a.Id == id);
+            if (aluno == null) return false;
+
+            aluno.Nome = nome;
+            aluno.CPF = cpf;
+            aluno.Curso = curso;
+            aluno.DataNascimento = dataNascimento;
+            return true;
+        }
+        
+        public bool ExcluirAluno(int id)
+        {
+            Aluno aluno = alunos.Find(a => a.Id == id);
+            return(aluno != null && alunos.Remove(aluno));
         }
     }
 }
